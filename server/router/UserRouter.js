@@ -66,6 +66,15 @@ userRouter.get("/fetchbymbl", (req, res) => {
     }
   });
 });
+
+userRouter.get(
+  "/userlist",
+
+  expressAsyncHandler(async (req, res) => {
+    const users = await User.find({});
+    res.send(users);
+  })
+);
 // userRouter.get(
 //   "/:id",
 //   expressAsyncHandler(async (req, res) => {

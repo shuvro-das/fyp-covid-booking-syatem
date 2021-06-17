@@ -32,6 +32,14 @@ Bookingrouter.get(
     res.send({ createdBookings });
   })
 );
+Bookingrouter.get(
+  "/bookinglist",
+
+  expressAsyncHandler(async (req, res) => {
+    const users = await Booking.find({});
+    res.send(users);
+  })
+);
 
 Bookingrouter.post("/sendmsg", async (req, res) => {
   const newBooking = await new Booking({

@@ -5,7 +5,7 @@ function AdminBookingList() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/users/mentor/mentorlist").then((res) => {
+    axios.get("http://localhost:5000/api/booking/bookinglist").then((res) => {
       console.log(res);
       setPosts(res.data);
     });
